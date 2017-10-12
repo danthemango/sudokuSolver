@@ -1,14 +1,14 @@
-SudokuSolver: main.o Sudoku.o
-	g++ -o SudokuSolver main.o Sudoku.o
+SudokuSolver: obj/main.o obj/Sudoku.o
+	g++ -o SudokuSolver obj/main.o obj/Sudoku.o
 
-main.o: main.cpp Sudoku.h
-	g++ -c main.cpp
+obj/main.o: src/main.cpp src/Sudoku.h
+	g++ -c src/main.cpp -o obj/main.o
 
-Sudoku.o: Sudoku.cpp Sudoku.h
-	g++ -c Sudoku.cpp
+obj/Sudoku.o: src/Sudoku.cpp src/Sudoku.h
+	g++ -c src/Sudoku.cpp -o obj/Sudoku.o
 
 clean:
-	rm *.o SudokuSolver
+	rm obj/* SudokuSolver
 
-debug: main.cpp Sudoku.cpp Sudoku.h
-	g++ -g -o SudokuSolver main.cpp Sudoku.cpp
+debug: src/main.cpp src/Sudoku.cpp src/Sudoku.h
+	g++ -g -o SudokuSolver src/main.cpp src/Sudoku.cpp

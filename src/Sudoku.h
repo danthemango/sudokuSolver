@@ -5,6 +5,8 @@
 // Purpose:    Implements the Sudoku object
 // ************************************************
 
+#ifndef SUDOKU_H
+
 #include <string>
 using namespace std;
 // the default size of the square in the grid
@@ -87,3 +89,5 @@ class Sudoku{
       //get a possible solution for the sudoku puzzle
       Sudoku getPossibleSolution(const Sudoku& input);
 };
+
+#endif // SUDOKU_H
